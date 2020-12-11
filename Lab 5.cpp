@@ -7,11 +7,11 @@ public:
     string surname;
     int* mark = new int[5];
     double avg_mark() {
-        double S = 0;
+        double sum = 0;
         for (int i = 0; i < 5; i++) {
-            S += mark[i];
+            sum += mark[i];
         }
-        return S / 5;
+        return sum / 5;
     }
 };
 class Group: public Student{
@@ -63,7 +63,7 @@ public:
 };
 void Input(Student student[], int count) {
     for (int i = 0; i < count; i++) {
-        cout << "Input information about" << " " << i + 1 << "student:" << endl;
+        cout << "Input information about" << " " << i + 1 << " student:" << endl;
         cin >> student[i].name;
         cin >> student[i].surname;
         for (int k = 0; k < 5; k++) {
@@ -74,11 +74,11 @@ void Input(Student student[], int count) {
 
 
 int main(){
-    int n;
-    int k;
+    int amount;
+    int number;
     cin >> n;
 
-    Group A(n);
+    Group A(amount);
     Input(A.student,A.count);
     A.Sort(A.student);
     A.Rate();
@@ -87,8 +87,8 @@ int main(){
     A.Sort(A.student);
     A.Rate();
 
-    cin >> k;
-    A.Delete(k);
+    cin >> number;
+    A.Delete(number);
     A.Sort(A.student);
     A.Rate();
 }
